@@ -66,11 +66,11 @@ A partir desse ponto o APP já estará rodando. O servidor Apache/Nginx e banco 
 
 O blog pode ser acessado no localhost http://127.0.0.1/
 
-A home pode ser acessada sem login e lista todos os posts.
+A home pode ser acessada sem login e nela encontra-se a listagem de todos os posts.
 
 O blog tem sistema de paginação, que aparece caso tenha mais de 15 posts.
 
-No canto superior direito tem links para criar uma nova conta ou logar, já exite um User criado quando rodamos as seeds.
+No canto superior direito tem links para criar uma nova conta ou logar, já existe um User criado quando rodamos as seeds.
 
 > > `Email: admin@creators-blog.test | Password: password`
 
