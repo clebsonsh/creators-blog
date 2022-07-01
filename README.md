@@ -93,3 +93,7 @@ Tentei fazer o deploy do blog no [Heroku](https://creators-dev-blog.herokuapp.co
 Aparentemente é problema de **SESSION**.
 
 Tentei resolver mudando o driver de session para database, desabilitando a checagem de **CSRF**, mas não tive sucesso.
+
+Tive que usar o PostgreSQL no Heroku, pois o MySQL não está disponível no Heroku.
+
+A mudança de banco de dados foi simples, só precisei alterar as 'Config Vars' para usar o PostgreSQL e tudo ocorreu atuomáticamente.
