@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard.index') }}" class="border-gray-900 border-8 rounded-full">
+                    <a href="{{ route('post.index') }}" class="border-gray-900 border-8 rounded-full">
                         <x-application-logo />
                     </a>
                 </div>
@@ -16,11 +16,11 @@
                         Home
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')">
+                    <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
                         Posts List
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard.create')" :active="request()->routeIs('dashboard.create')">
+                    <x-nav-link :href="route('post.create')" :active="request()->routeIs('post.create')">
                         Add New Post
                     </x-nav-link>
                 </div>
@@ -70,11 +70,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard.index')" :active="request()->routeIs('dashboard.index')">
+            <x-responsive-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
                 Posts List
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link :href="route('dashboard.create')" :active="request()->routeIs('dashboard.create')">
+            <x-responsive-nav-link :href="route('post.create')" :active="request()->routeIs('post.create')">
                 Add New Post
             </x-responsive-nav-link>
         </div>

@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::resource('dashboard', PostController::class)->middleware(['auth']);
+Route::resource('post', PostController::class)->middleware(['auth']);
 
 require __DIR__ . '/auth.php';

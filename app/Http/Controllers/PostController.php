@@ -17,7 +17,7 @@ class PostController extends Controller
     {
         $posts = Post::paginate();
 
-        return view('dashboard.index', compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -38,18 +38,14 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
-    }
+        $valiteted = $request->validated();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Post $post)
-    {
-        //
+        Post::create([
+            'title' => $valiteted['title'],
+            'text' => $valiteted['text'],
+        ]);
+
+        return redirect()->route('post.index');
     }
 
     /**
@@ -60,7 +56,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -72,7 +68,14 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $valiteted = $request->validated();
+
+        $post->title = $valiteted['title'];
+        $post->text = $valiteted['text'];
+
+        $post->save();
+
+        return redirect()->route('post.index');
     }
 
     /**
@@ -83,6 +86,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('post.index');
     }
 }
