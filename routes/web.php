@@ -1,5 +1,9 @@
 <?php
 
+if (env('APP_ENV') === 'production') {
+  \Illuminate\Support\Facades\URL::forceScheme('https');
+}
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
