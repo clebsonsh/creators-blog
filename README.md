@@ -60,4 +60,36 @@ Blog desenvolvido para o **Processo Seletivo Back-end** da [**Creators LLC**](ht
 
 > > `./vendor/bin/sail artisan migrate --seed`
 
+A partir desse ponto o APP já está rodando. O servidor Apache/Nginx e banco de dados MySQL/PostgreSQL não precisão ser instalados pois tudo será provido pelo Docker/Lravel Sail
+
 ## COMO USAR O APP LOCAL
+
+O blog pode ser acessado no localhost http://127.0.0.1/
+
+A home pode ser acessada sem login e lista todos os posts
+
+O blog tem sistema de paginação, que aparece caso tenha mais de 15 posts
+
+No canto superior direito tem links para criar uma nova conta ou logar, já exite um User criado quando rodamos as seeds
+
+> > `Email: admin@creators-blog.test | Password: password`
+
+Assim que logar você será redirecionado ao parte administrativa do blog, onde é possível criar, editar e deletar posts
+
+## STACK USADA
+
+-   PHP
+-   HTML
+-   CSS
+-   Laravel
+-   TailwindCSS
+-   MySQL
+-   Docker
+
+### INFORMÇÕES EXTRAS
+
+Tentei fazer o deploy do blog no [Heroku](https://creators-dev-blog.herokuapp.com/) mas ao tentar fazer login na aplição dá **error 419 PAGE | EXPIRED**
+
+Aparentemente é problema de **SESSION**
+
+Tentei resolver mudando o driver de session para database, desabilitando a checagem de **CSRF** mas não tive sucesso
